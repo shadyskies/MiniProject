@@ -1,0 +1,5 @@
+Outlined button-https://www.woolha.com/tutorials/flutter-using-outlinedbutton-widget-examples
+Dotted line- https://www.fluttercampus.com/guide/22/how-to-create-horizontal-dash-dotted-line-in-flutter-app/
+if-else - https://www.flutterbeads.com/if-else-statement-in-flutter-widget/
+https://stackoverflow.com/questions/57902284/type-futuredynamic-is-not-a-subtype-of-type-void
+
