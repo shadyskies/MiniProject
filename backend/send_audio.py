@@ -3,14 +3,16 @@ import requests
 # send audio files using python
 def send_audio():
     headers = {'content-type': 'audio/wav'}
-    f1 = open("1.mp3", "rb")
-    f2 = open("2.mp3", "rb")
+    f1 = open("../1.mp3", "rb")
+    f2 = open("../2.mp3", "rb")
     url = "http://localhost:8000/api/concat_audio/"
     data = {
-        "file1": f1,
-        "file2": f2
+        "first_file": f1,
+        "second_file": f2
     }
     response = requests.post(url=url, files=data)
+    print(response.json())
+
     f1.close()
     f2.close()
 
