@@ -11,3 +11,6 @@ Cannot run with sound null safety-https://www.devopsschool.com/blog/flutter-cann
 player-https://doctorcodetutorial.blogspot.com/2020/10/make-music-player-in-flutter.html
 Drag and drop to upload files-https://protocoderspoint.com/flutter-web-drag-and-drop-to-upload-files-dropzone/
 use ListTile inside horizontal ListView in Flutter-https://stackoverflow.com/questions/63766176/how-to-use-listtile-inside-horizontal-listview-in-flutter
+Circular Image in Flutter-https://www.flutterbeads.com/circular-image-in-flutter/
+If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.
+set Custom height for Widget in GridView in Flutter?-https://stackoverflow.com/questions/48405123/how-to-set-custom-height-for-widget-in-gridview-in-flutter

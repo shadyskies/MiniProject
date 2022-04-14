@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:music_generator_app/playingsong/playaudio.dart';
+import 'package:music_generator_app/profile/audioclass.dart';
 import 'package:music_generator_app/profile/profileclass.dart';
 
 class PlayAudioLists extends StatefulWidget {
   final ProfileData profileData;
+  final AudioData song;
+  // final int index;
 
   const PlayAudioLists({
     Key? key,
     required this.profileData,
+    required this.song,
   }) : super(key: key);
 
   @override
@@ -17,10 +21,14 @@ class PlayAudioLists extends StatefulWidget {
 class _PlayAudioLists extends State<PlayAudioLists> {
   int selectedIndex = 0;
 
-  late String file;
+  late AudioData song;
   @override
   void initState() {
-    file = widget.profileData.getAudioPosts[0].getFile;
+    for (var i = 0; i < widget.profileData.getAudioPosts.length; i++) {
+      if (widget.profileData.getAudioPosts[i].compareTo(widget.song)) {
+        song = widget.profileData.getAudioPosts[i];
+      }
+    }
   }
 
   @override
@@ -30,8 +38,49 @@ class _PlayAudioLists extends State<PlayAudioLists> {
         body: Container(
             height: 800,
             child: Column(children: <Widget>[
-              const SizedBox(height: 140),
-              Expanded(child: PlayAudio(file: file)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Row(children: <Widget>[
+                  Container(
+                      margin: const EdgeInsets.only(
+                          top: 40.0, left: 20.0, bottom: 0.0),
+                      child: (widget.profileData.getImage.compareTo("") == 0)
+                          ? const Icon(Icons.account_circle_outlined,
+                              color: Colors.white, size: 55.0)
+                          : CircleAvatar(
+                              radius: 30,
+                              backgroundImage:
+                                  AssetImage(widget.profileData.getImage),
+                            )),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10.0, top: 35.0),
+                    child: Text(widget.profileData.getUserName,
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          color: Colors.pink.shade400,
+                          fontWeight: FontWeight.normal,
+                        )),
+                  ),
+                ]),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 10.0),
+                child: Align(
+                  alignment: Alignment(-0.8, 0.6),
+                  child: Text(
+                    'POSTS',
+                    style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'Audiowide',
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Expanded(child: PlayAudio(song: song)),
               SizedBox(
                 height: 220,
                 child: Container(
@@ -49,9 +98,11 @@ class _PlayAudioLists extends State<PlayAudioLists> {
                           width: 190,
                           child: ListTile(
                               leading: Container(
-                                  padding: EdgeInsets.only(top: 40, left: 40),
+                                  margin: EdgeInsets.only(top: 55, left: 50),
                                   child: Icon(Icons.music_note_sharp,
-                                      color: Colors.white, size: 80.0)),
+                                      color: Colors.white, size: 40.0)),
+
+                              //  subtitle: Text('This is subtitle'),
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                       color: selectedIndex == i
@@ -61,8 +112,7 @@ class _PlayAudioLists extends State<PlayAudioLists> {
                                   borderRadius: BorderRadius.circular(0.1)),
                               onTap: () {
                                 setState(() {
-                                  file = widget
-                                      .profileData.getAudioPosts[i].getFile;
+                                  song = widget.profileData.getAudioPosts[i];
                                   selectedIndex = i;
                                 });
                               }));

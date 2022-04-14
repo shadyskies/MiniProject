@@ -4,14 +4,15 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:music_generator_app/profile/audioclass.dart';
 import 'package:music_generator_app/profile/profileclass.dart';
 
 import 'animations.dart';
 
 class PlayAudio extends StatefulWidget {
-  String file;
+  final AudioData song;
   PlayAudio({
-    required this.file,
+    required this.song,
     Key? key,
   }) : super(key: key);
 
@@ -76,12 +77,26 @@ class _PlayAudio extends State<PlayAudio> {
         body: SizedBox(
             height: 400,
             child: Column(children: <Widget>[
-              SizedBox(
-                height: 200,
-                width: 200,
-                child: Play(isPlaying: playing),
+              Container(
+                padding: EdgeInsets.only(top: 10.0),
+                child: SizedBox(
+                  height: 190,
+                  width: 200,
+                  child: Play(isPlaying: playing),
+                ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
+              Container(
+                margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                child: Text(
+                  widget.song.getName,
+                  style: TextStyle(
+                      fontSize: 12.0,
+                      fontFamily: 'Audiowide',
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white),
+                ),
+              ),
               Center(
                   child: Container(
                 height: 80,
@@ -94,7 +109,7 @@ class _PlayAudio extends State<PlayAudio> {
                   IconButton(
                     onPressed: () {
                       if (!playing) {
-                        cache.play(widget.file);
+                        cache.play(widget.song.getFile);
                         //cache.play('audios/InMyFeels.mp3');
                         setState(() {
                           playBtn = Icons.pause;

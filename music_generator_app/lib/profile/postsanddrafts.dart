@@ -22,32 +22,34 @@ class _PostsandDraftsState extends State<PostsandDrafts> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
-        Padding(
+        Container(
           padding: EdgeInsets.only(bottom: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
                 height: 75,
+                width: 170,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
                           width: 5.0,
-                          color: isPrev ? Colors.grey : Colors.white),
+                          color: isPrev ? Colors.white : Colors.grey),
                     ),
                   ),
                   child: TextButton(
                     child: Text(
-                      'Posts',
+                      'POSTS',
                       style: TextStyle(
-                        fontSize: 27,
-                        color: isPrev ? Colors.grey : Colors.white,
+                        fontFamily: 'Audiowide',
+                        fontSize: 25,
+                        color: isPrev ? Colors.white : Colors.grey,
                       ),
                     ),
                     onPressed: () {
                       setState(() {
-                        isPrev = false;
+                        isPrev = true;
                       });
                     },
                   ),
@@ -55,25 +57,27 @@ class _PostsandDraftsState extends State<PostsandDrafts> {
               ),
               SizedBox(
                   height: 75,
+                  width: 170,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
                             width: 5.0,
-                            color: isPrev ? Colors.white : Colors.grey),
+                            color: isPrev ? Colors.grey : Colors.white),
                       ),
                     ),
                     child: TextButton(
                       onPressed: () {
                         setState(() {
-                          isPrev = true;
+                          isPrev = false;
                         });
                       },
                       child: Text(
-                        'Drafts',
+                        'DRAFTS',
                         style: TextStyle(
-                          fontSize: 27,
-                          color: isPrev ? Colors.white : Colors.grey,
+                          fontFamily: 'Audiowide',
+                          fontSize: 25,
+                          color: isPrev ? Colors.grey : Colors.white,
                         ),
                       ),
                     ),
@@ -81,45 +85,41 @@ class _PostsandDraftsState extends State<PostsandDrafts> {
             ],
           ),
         ),
-        // Expanded(
-        //     child:
-        SizedBox(
-            height: 100,
-            child: isPrev
-                ? Container(
-                    padding: const EdgeInsets.all(5.0),
-                    child: SizedBox(
-                        height: 100.0,
-                        child: GridView.count(
-                            crossAxisCount: 2,
-                            padding: const EdgeInsets.only(
-                                left: 15, right: 190, bottom: 90),
-                            crossAxisSpacing: 1.0,
-                            mainAxisSpacing: 5.0,
-                            children: List.generate(
-                                widget.profileData.getAudioPosts.length,
-                                (index) {
-                              return SongIconWidget(
-                                  song:
-                                      widget.profileData.getAudioPosts[index]);
-                            }))))
-                : Container(
-                    padding: const EdgeInsets.all(5.0),
-                    child: SizedBox(
-                        height: 100.0,
-                        child: GridView.count(
-                            crossAxisCount: 2,
-                            padding: const EdgeInsets.only(
-                                left: 15, right: 190, bottom: 90),
-                            crossAxisSpacing: 1.0,
-                            mainAxisSpacing: 5.0,
-                            children: List.generate(
-                                widget.profileData.getAudioDrafts.length,
-                                (index) {
-                              return SongIconWidget(
-                                  song:
-                                      widget.profileData.getAudioDrafts[index]);
-                            })))))
+
+        isPrev
+            ? SizedBox(
+                height: 200,
+                child: GridView.count(
+                    crossAxisCount: 3,
+                    padding:
+                        const EdgeInsets.only(left: 15, right: 10, bottom: 90),
+                    crossAxisSpacing: 1.0,
+                    mainAxisSpacing: 5.0,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    //physics: const NeverScrollableScrollPhysics(),
+                    children: List.generate(
+                        widget.profileData.getAudioPosts.length, (index) {
+                      return SongIconWidget(
+                          profileData: widget.profileData,
+                          song: widget.profileData.getAudioPosts[index]);
+                    })))
+            : SizedBox(
+                height: 200,
+                child: GridView.count(
+                    crossAxisCount: 3,
+                    padding:
+                        const EdgeInsets.only(left: 15, right: 10, bottom: 90),
+                    crossAxisSpacing: 1.0,
+                    mainAxisSpacing: 5.0,
+                    //shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    children: List.generate(
+                        widget.profileData.getAudioDrafts.length, (index) {
+                      return SongIconWidget(
+                          profileData: widget.profileData,
+                          song: widget.profileData.getAudioDrafts[index]);
+                    })))
         // )
       ]),
     );

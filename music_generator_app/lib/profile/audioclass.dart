@@ -20,4 +20,11 @@ class AudioData {
   String get getFile {
     return file;
   }
+
+  bool compareTo(AudioData obj) {
+    if (obj.getName == name) {
+      return true;
+    }
+    return false;
+  }
 }

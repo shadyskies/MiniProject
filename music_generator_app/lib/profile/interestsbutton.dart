@@ -8,10 +8,11 @@ class InterestsWidget extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+        margin: EdgeInsets.only(bottom: 10),
+        height: 25,
         child: Container(
             width: 80,
-            height: 25,
             color: Colors.pink.shade400,
             child: Center(
                 child: Text(label,
