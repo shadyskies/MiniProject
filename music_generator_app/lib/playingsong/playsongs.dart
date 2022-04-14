@@ -101,7 +101,19 @@ class _PlayAudioLists extends State<PlayAudioLists> {
                                   margin: EdgeInsets.only(top: 55, left: 50),
                                   child: Icon(Icons.music_note_sharp,
                                       color: Colors.white, size: 40.0)),
+                              trailing: //Container(
 
+                                  // child:
+                                  GestureDetector(
+                                onTapDown: (TapDownDetails details) {
+                                  _showPopupMenu(details.globalPosition);
+                                },
+                                child: Icon(
+                                  Icons.menu,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              // ),
                               //  subtitle: Text('This is subtitle'),
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(
@@ -121,5 +133,46 @@ class _PlayAudioLists extends State<PlayAudioLists> {
                 ),
               )
             ])));
+  }
+
+  _showPopupMenu(Offset offset) async {
+    double left = offset.dx;
+    double top = offset.dy;
+    await showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(left / 2.0, top, left / 2.0, 0),
+      items: [
+        PopupMenuItem(
+            value: 1,
+            child: Row(children: <Widget>[
+              const Icon(Icons.delete),
+              const Text("Delete"),
+            ])),
+        PopupMenuItem(
+          value: 2,
+          child: Row(children: <Widget>[
+            const Icon(Icons.share),
+            const Text("Share"),
+          ]),
+        ),
+        PopupMenuItem(
+          value: 3,
+          child: Row(children: <Widget>[
+            const Icon(Icons.download),
+            const Text("Download"),
+          ]),
+        ),
+        PopupMenuItem(
+          value: 4,
+          child: Row(children: <Widget>[
+            const Icon(Icons.info),
+            const Text("Get Info"),
+          ]),
+        ),
+      ],
+      elevation: 8.0,
+    ).then((value) {
+      if (value != null) print(value);
+    });
   }
 }
