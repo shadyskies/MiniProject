@@ -127,6 +127,14 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           PostsandDrafts(profileData: profileData),
+          Container(
+            margin: EdgeInsets.only(top: 30, right: 40),
+            child: IconButton(
+              icon: Icon(Icons.add_circle_outline_rounded,
+                  color: Colors.pink.shade400, size: 70),
+              onPressed: () {},
+            ),
+          )
         ]));
   }
 
