@@ -35,6 +35,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.20
 
+  # flutter_dropzone: ^2.0.1
+  audioplayers: ^0.16.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -95,4 +98,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-  

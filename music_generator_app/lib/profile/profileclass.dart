@@ -1,4 +1,4 @@
-import 'package:music_generator_app/audioclass.dart';
+import 'package:music_generator_app/profile/audioclass.dart';
 
 class ProfileData {
   String name;
@@ -6,7 +6,8 @@ class ProfileData {
   String email;
   List<String> interests;
   String image;
-  // AudioData audio;
+  List<AudioData> postslist;
+  List<AudioData> draftslist;
 
   ProfileData({
     required this.name,
@@ -14,7 +15,8 @@ class ProfileData {
     required this.username,
     required this.interests,
     this.image = "",
-    // required this.audio,
+    required this.postslist,
+    required this.draftslist,
   });
 
   String get getName {
@@ -37,7 +39,11 @@ class ProfileData {
     return image;
   }
 
-  // AudioData get getAudio {
-  //   return audio;
-  // }
+  List<AudioData> get getAudioPosts {
+    return postslist;
+  }
+
+  List<AudioData> get getAudioDrafts {
+    return draftslist;
+  }
 }
