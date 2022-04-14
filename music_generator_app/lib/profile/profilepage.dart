@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_generator_app/profile/interestsbutton.dart';
+import 'package:music_generator_app/profile/songscontainer.dart';
+import 'postsanddrafts.dart';
 import 'profileclass.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -96,25 +98,24 @@ class ProfilePage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ))),
           Container(
-            padding: EdgeInsets.all(12.0),
-            child: Expanded(
-                child: SizedBox(
-                    height: 400.0,
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 1.0,
-                      mainAxisSpacing: 10.0,
-                      children: List.generate(
-                        profileData.getInterests.length,
-                        (index) {
-                          return InterestsWidget(
-                              label: profileData.getInterests[index]);
-                        },
-                      ),
-                    ))),
-          ),
-          
-
+              padding: const EdgeInsets.all(5.0),
+              child: SizedBox(
+                  height: 200.0,
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    padding:
+                        const EdgeInsets.only(left: 15, right: 190, bottom: 90),
+                    crossAxisSpacing: 1.0,
+                    mainAxisSpacing: 5.0,
+                    children: List.generate(
+                      profileData.getInterests.length,
+                      (index) {
+                        return InterestsWidget(
+                            label: profileData.getInterests[index]);
+                      },
+                    ),
+                  ))),
+          PostsandDrafts(profileData: profileData),
         ]));
   }
 

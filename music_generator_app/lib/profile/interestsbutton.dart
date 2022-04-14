@@ -8,15 +8,15 @@ class InterestsWidget extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        height: 100,
-        child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Container(
-                color: Colors.pink.shade400,
+    return Center(
+        child: Container(
+            width: 80,
+            height: 25,
+            color: Colors.pink.shade400,
+            child: Center(
                 child: Text(label,
                     style: const TextStyle(
-                      fontSize: 15.0,
+                      fontSize: 17.0,
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
                     )))));
