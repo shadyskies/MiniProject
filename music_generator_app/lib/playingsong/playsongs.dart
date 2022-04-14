@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:music_generator_app/playingsong/playaudio.dart';
 import 'package:music_generator_app/profile/profileclass.dart';
 
-
-
 class PlayAudioLists extends StatefulWidget {
   final ProfileData profileData;
 
@@ -18,6 +16,7 @@ class PlayAudioLists extends StatefulWidget {
 
 class _PlayAudioLists extends State<PlayAudioLists> {
   int selectedIndex = 0;
+
   late String file;
   @override
   void initState() {

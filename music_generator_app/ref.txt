@@ -3,3 +3,11 @@ Dotted line- https://www.fluttercampus.com/guide/22/how-to-create-horizontal-das
 if-else - https://www.flutterbeads.com/if-else-statement-in-flutter-widget/
 https://stackoverflow.com/questions/57902284/type-futuredynamic-is-not-a-subtype-of-type-void
 
+flutter pass parameter to statefulwidget-https://www.codegrepper.com/code-examples/whatever/flutter+pass+parameter+to+statefulwidget
+Invalid Constant Value using variable as parameter-https://stackoverflow.com/questions/55635663/invalid-constant-value-using-variable-as-parameter
+BoxConstraints forces an infinite width-https://stackoverflow.com/questions/52442724/boxconstraints-forces-an-infinite-width
+Animations-https://stackoverflow.com/questions/52442724/boxconstraints-forces-an-infinite-width
+Cannot run with sound null safety-https://www.devopsschool.com/blog/flutter-cannot-run-with-sound-null-safety-because-the-following-dependencies-dont-support-null-safety/
+player-https://doctorcodetutorial.blogspot.com/2020/10/make-music-player-in-flutter.html
+Drag and drop to upload files-https://protocoderspoint.com/flutter-web-drag-and-drop-to-upload-files-dropzone/
+use ListTile inside horizontal ListView in Flutter-https://stackoverflow.com/questions/63766176/how-to-use-listtile-inside-horizontal-listview-in-flutter

@@ -2,13 +2,11 @@ class AudioData {
   String name;
   // String duration;
   String file;
- 
 
   AudioData({
     required this.name,
     // required this.duration,
     required this.file,
-   
   });
 
   String get getName {
@@ -22,5 +20,4 @@ class AudioData {
   String get getFile {
     return file;
   }
-
 }
