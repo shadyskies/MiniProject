@@ -42,6 +42,9 @@ dependencies:
   # assets_audio_player: ^3.0.3+1
   # audioplayers: any
 
+  # flutter_dropzone: ^2.0.1
+  # audioplayers: ^0.16.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,8 +67,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/logo.png
-    - assets/images/shona.jpg
+    - assets/images/
     - assets/audios/
     # - assets/audios/InMyFeels.mp3
 
