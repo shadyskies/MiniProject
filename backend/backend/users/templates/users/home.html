@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h4>Home page</h4>
+    <p>Welcome to the website: {{user.username}}</p>
+    <p>Want to merge two audio files? Click <a href="/audio-merge/">here</a></p>
+    <p>Want to generate midi files? Click <a href="/midi-generate/">here</a><p>
+    <p>Want to upload songs? Click <a href="/song-upload/">here</a><p>
+</body>
+</html>
