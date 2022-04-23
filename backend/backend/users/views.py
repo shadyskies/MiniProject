@@ -22,7 +22,7 @@ def login_view(request):
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				login(request, user)
-				messages.info(request, f"You are now logged in as {username}.")
+				messages.success(request, f"You are now logged in as {username}.")
 				return redirect("/")
 			else:
 				messages.error(request,"Invalid username or password.")
@@ -35,7 +35,7 @@ def login_view(request):
 def logout_view(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
-	return redirect("/login")
+	return redirect("/login/")
 
 def signup(request):
 	if request.user.is_authenticated:
@@ -63,3 +63,7 @@ def profile(request):
 		'updated_at': request.user.updated_at
 	}
 	return render(request, 'users/profile.html', context)
+
+
+def about(request):
+	return render(request, 'users/about.html')

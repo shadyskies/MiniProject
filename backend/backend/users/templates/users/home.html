@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+{% extends "users/base.html" %}
+{% block content %}
+    <div class="main">
+        <div class="title" style="width: 60%; margin: auto">
+            <h3 style="text-align: center">Welcome {{user}}</h3>
+            
+            <br><p>Want to generate a MIDI file? Click <a href="/midi-generate/">here</a></p>
+            <br><p>Want to merge two songs? Click <a href="/audio-merge/">here</a></p>
+            <br><p>Want to upload a new song? Click <a href="/song-upload/">here</a></p>
+            <br><p>Want to view the list of songs users have uploaded? Click <a href="/songs-view/">here</a></p>
+            
+        </div>
+    </div>
 
-    <h4>Home page</h4>
-    <p>Welcome to the website: {{user.username}}</p>
-    <p>Want to merge two audio files? Click <a href="/audio-merge/">here</a></p>
-    <p>Want to generate midi files? Click <a href="/midi-generate/">here</a><p>
-    <p>Want to upload songs? Click <a href="/song-upload/">here</a><p>
-</body>
-</html>
+{% endblock %}

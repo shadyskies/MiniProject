@@ -1,0 +1,35 @@
+{% extends "users/base.html" %}
+{% block content %}
+    {% if songs %}
+        <!-- display id, title, created_at in bootstrap table -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Songs List</h2><br>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Title</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for song in songs %}
+                                <tr>
+                                    <td>{{ song.id }}</td>
+                                    <td>{{ song.user.username }}</td>
+                                    <td><a href="{{song.song.url}}">{{song.title }}</a></td>
+                                    <td>{{ song.created_at }}</td>
+                                    
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    {% else %}
+        <h4>No songs available!</h4>
+    {% endif %}
+{% endblock %}
