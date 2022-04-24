@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         //   mp3name: 'country',
         // ),
         //Intro(),
-        home: ProfilePage(
+        home: Intro(
             profileData: ProfileData(
                 image: 'assets/images/shona.jpg',
                 username: 'astha14',

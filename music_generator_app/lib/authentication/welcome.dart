@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:music_generator_app/profile/profileclass.dart';
 
 import 'login_button.dart';
 import 'dottedline.dart';
 
 class Intro extends StatelessWidget {
+  final ProfileData profileData;
+
+  const Intro({Key? key, required this.profileData}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +22,8 @@ class Intro extends StatelessWidget {
                   image: AssetImage('assets/images/logo.png'),
                 ),
               )),
-          const ButtonWidget(buttonLabel: 'LOGIN'),
-          const ButtonWidget(buttonLabel: 'SIGN UP'),
+          ButtonWidget(buttonLabel: 'LOGIN', profileData: profileData),
+          ButtonWidget(buttonLabel: 'SIGN UP', profileData: profileData),
           Stack(children: <Widget>[
             Container(
               // padding: const EdgeInsets.only(left: 15.0),

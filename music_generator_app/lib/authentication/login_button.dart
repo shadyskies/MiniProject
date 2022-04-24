@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:music_generator_app/profile/profileclass.dart';
+import 'package:music_generator_app/profile/profilepage.dart';
 
 class ButtonWidget extends StatelessWidget {
+    final ProfileData profileData;
   final String buttonLabel;
   const ButtonWidget({
     Key? key,
     required this.buttonLabel,
+    required this.profileData,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -12,7 +16,13 @@ class ButtonWidget extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         child: OutlinedButton(
           child: Text(buttonLabel),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        ProfilePage(profileData: profileData)));
+          },
           style: OutlinedButton.styleFrom(
               primary: Colors.white,
               shape: const BeveledRectangleBorder(
