@@ -3,24 +3,19 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="{% static 'users/welcome.css' %}"
+    href="{% static 'users/welcomepage.css' %}"
   />
 </head>
 <body>
   {% if messages %} {% for message in messages %} {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
     <!-- error message -->
-    <div class="alert alert-error alert-dismissible fade show" role="alert">
-      {{message}}
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-        style="outline: none"
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <span type="button" class="close" data-dismiss="alert" aria-label="Close"
+        ><span aria-hidden="true">&times;</span></span
       >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
+      {{message}}
+      </div>
+      
 
     {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
     <!-- success message -->
@@ -41,8 +36,11 @@
     {% endif %} {% endfor %} {% endif %}
 
   <div class="row">
-    {% comment %} <div class="title">MusicM<span>an</span>ia</div> {% endcomment %}
-    <div class="title">MusicM<span class="delay">an</span>ia</div>
+   
+    <div class="title">
+
+   MusicM<span class="delay">an</span>ia
+</div>
 
     {% block content %} {% endblock %}
     </div>
