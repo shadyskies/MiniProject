@@ -1,15 +1,96 @@
-{% extends "users/base.html" %}
-{% block content %}
-    <div class="main">
-        <div class="title" style="width: 60%; margin: auto">
-            <h3 style="text-align: center">Welcome {{user}}</h3>
-            
-            <br><p>Want to generate a MIDI file? Click <a href="/midi-generate/">here</a></p>
-            <br><p>Want to merge two songs? Click <a href="/audio-merge/">here</a></p>
-            <br><p>Want to upload a new song? Click <a href="/song-upload/">here</a></p>
-            <br><p>Want to view the list of songs users have uploaded? Click <a href="/songs-view/">here</a></p>
-            
-        </div>
+{% extends "users/base.html" %} {% block content %} {% load static %}
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'users/home.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <div class="main">
+    <div class="title" style="width: 60%; margin: auto">
+      <h3 style="text-align: center">Welcome {{user}}</h3>
     </div>
+    <br />
 
-{% endblock %}
+    <div class="cont" style="width: 80%; margin: auto; margin-top: 120px">
+      <ul class="scroll">
+        <li class="list-item">
+          <div class="card carda">
+            <a
+              class="card-block stretched-link text-decoration-none"
+              href="/midi-generate/"
+            >
+              <div class="card-body">
+                <center>
+                  <div class="card-icon">
+                    <i
+                      class="fa fa-cogs fa-10x"
+                      aria-hidden="true"
+                      style="color: white"
+                    ></i>
+                  </div>
+                </center>
+                <center>
+                  <div class="card-title">Generate MIDI File</div>
+                </center>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="card cardb">
+            <a
+              class="card-block stretched-link text-decoration-none"
+              href="/audio-merge/"
+            >
+              <div class="card-body">
+                <center>
+                  <div class="card-icon">
+                    <i
+                      class="fas fa-code-merge fa-10x"
+                      aria-hidden="true"
+                      style="color: white"
+                    ></i>
+                  </div>
+                </center>
+                <center>
+                  <div class="card-title">Merge Songs</div>
+                </center>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="card cardc">
+            <a
+              class="card-block stretched-link text-decoration-none"
+              href="/song-upload/"
+            >
+              <div class="card-body">
+                <center>
+                  <div class="card-icon">
+                    <i
+                      class="fa fa-upload fa-10x"
+                      aria-hidden="true"
+                      style="color: white"
+                    ></i>
+                  </div>
+                </center>
+                <center>
+                  <div class="card-title">Upload New Song</div>
+                </center>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {% endblock %}
+</html>

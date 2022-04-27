@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from dotenv import load_dotenv
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,8 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-import os
-from dotenv import load_dotenv
 
 load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -29,7 +29,8 @@ SECRET_KEY = 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0", 'localhost', 'app-env.eba-e2jhhaaz.ap-south-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ["0.0.0.0", 'localhost',
+                 'app-env.eba-e2jhhaaz.ap-south-1.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -131,11 +132,13 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
-STATIC_ROOT  = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "users/static"),
+    os.path.join(BASE_DIR, "audio/static"),
+
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

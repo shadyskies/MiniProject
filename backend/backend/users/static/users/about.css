@@ -1,0 +1,19 @@
+@import url(//fonts.googleapis.com/css?family=Pacifico);
+
+.main {
+  background-color: white;
+  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) center
+    no-repeat;
+  background-size: cover;
+  height: 1200px;
+  padding-top: 150px;
+}
+.card {
+  width: 600px;
+  margin: auto;
+  color: white;
+  background-color: #113;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 50px 100px -20px,
+    rgba(255, 255, 255, 0.25) 0px 30px 60px -20px,
+    rgba(255, 255, 255, 0.3) 0px -2px 6px 0px inset;
+}

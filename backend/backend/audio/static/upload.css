@@ -1,0 +1,11 @@
+@import url(//fonts.googleapis.com/css?family=Pacifico);
+
+body {
+  min-height: 100vh;
+  padding-top: 5rem;
+  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) center
+    no-repeat;
+  background-size: cover;
+  margin: 0;
+  overflow: hidden;
+}

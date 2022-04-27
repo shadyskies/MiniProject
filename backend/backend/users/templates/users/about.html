@@ -1,17 +1,38 @@
-{% extends "users/base.html" %}
-{% load crispy_forms_tags %}
+{% extends "users/base.html" %} {% load crispy_forms_tags %} {% load static %}
 {% block content %}
+<head>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'users/about.css' %}"
+  />
+</head>
 <div class="main">
-	<div class="title" style="width: 60%; margin: auto">
-		<h3 style="text-align: center">About</h3>
-		<h4>The project</h4>
-		<p>
-			A new entrant to the music industry, is often faced with a myriad of instruments to play as well they have to take into consideration, how each chord matches with other instruments to create a melody. We aim to simplify this process for a novice and generate music using his input file as a reference. This will also help the end user to learn what chords he can play in a particular sequence. The beginners who don't have a proper knowledge of creating a whole beat can find this application useful. This can be also used by singers and new artists to use the music for their background track and if they want they can edit it too according to their own preferences.
+  <div class="card">
+    <div class="title" style="width: 60%; margin: auto">
+      <br />
+      <h2 style="text-align: center">ABOUT</h2>
+      <center><h4 style="color:gray">THE PROJECT</h4><center/>
+      <br />
+      <p style="font-size: 20px">
+        A new entrant to the music industry, is often faced with a myriad of
+        instruments to play as well they have to take into consideration, how
+        each chord matches with other instruments to create a melody. We aim to
+        simplify this process for a novice and generate music using his input
+        file as a reference. This will also help the end user to learn what
+        chords he can play in a particular sequence. The beginners who don't
+        have a proper knowledge of creating a whole beat can find this
+        application useful. This can be also used by singers and new artists to
+        use the music for their background track and if they want they can edit
+        it too according to their own preferences.
 
-			<br>
-			You can see the <a href="https://github.com/shadyskies/MiniProject">souce code</a> uploaded on GitHub
-		</p>
-	</div>
+        <br />
+        You can see the
+        <a href="https://github.com/shadyskies/MiniProject">source code</a>
+        uploaded on GitHub
+      </p>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
